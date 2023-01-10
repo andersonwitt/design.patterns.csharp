@@ -7,13 +7,14 @@ namespace CreationalDesignPatterns.Factory
 {
     public class HTMLButton : IButton
     {
-        void render()
+        public void Render()
         {
-            //render HTMLButton
+            Console.WriteLine("HTML button was rendered.");
         }
 
-        void onClick(Func function)
+        public void OnClick(Action function)
         {
+            Console.WriteLine("HTML button was clicked.");
             function();
         }
     }

@@ -1,21 +1,17 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
 namespace CreationalDesignPatterns.Factory
 {
     public abstract class Dialog
     {
-        void closeDialog();
-        void render()
+        public abstract void CloseDialog();
+        public void Render()
         {
-            IButton button = this.createButton();
+            IButton button = this.CreateButton();
 
-            button.onClick(closeDialog);
+            button.Render();
 
-            button.render();
+            button.OnClick(CloseDialog);
+
         }
-        abstract createButton();
+        public abstract IButton CreateButton();
     }
 }

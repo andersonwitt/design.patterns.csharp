@@ -1,36 +1,28 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
 namespace CreationalDesignPatterns.Factory
 {
-    public class Application
+    public class ApplicationInitializer
     {
-        public Dialog Dialog { get; set; }
-
-        void initialize(string os)
+        public Dialog? Dialog { get; set; }
+        public ApplicationInitializer(string os)
         {
-            if (os == "Windows")
+            this.Initialize(os);
+        }
+
+        void Initialize(string os)
+        {
+            if (os.ToLower() == "windows")
             {
                 Dialog = new WindowsDialog();
                 return;
             }
 
-            if (os == "Web")
+            if (os.ToLower() == "web")
             {
                 Dialog = new WebDialog();
                 return;
             }
 
             throw new Exception("Error! Unknown operating system.");
-        }
-
-        public static void Main(string[] args)
-        {
-            this.initialize();
-
-            Dialog.render();
         }
     }
 }

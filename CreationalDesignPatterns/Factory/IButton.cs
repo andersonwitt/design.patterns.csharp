@@ -7,7 +7,7 @@ namespace CreationalDesignPatterns.Factory
 {
     public interface IButton
     {
-        void render();
-        void onClick(Func function);
+        public void Render();
+        public void OnClick(Action function);
     }
 }

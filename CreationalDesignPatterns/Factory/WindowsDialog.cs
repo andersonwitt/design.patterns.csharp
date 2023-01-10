@@ -1,13 +1,13 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
 namespace CreationalDesignPatterns.Factory
 {
     public class WindowsDialog : Dialog
     {
-        WindowsButton createButton()
+        public override void CloseDialog()
+        {
+            Console.WriteLine("Windows dialog was closed.");
+        }
+
+        public override IButton CreateButton()
         {
             return new WindowsButton();
         }

@@ -7,13 +7,15 @@ namespace CreationalDesignPatterns.Factory
 {
     public class WindowsButton : IButton
     {
-        void render()
+        public void Render()
         {
             //render windows button
+            Console.WriteLine("Windows button was rendered.");
         }
 
-        void onClick(Func function)
+        public void OnClick(Action function)
         {
+            Console.WriteLine("Windows button was clicked.");
             function();
         }
 
